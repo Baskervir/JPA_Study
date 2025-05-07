@@ -18,10 +18,20 @@ public class JpaMain {
 
         try {
 
-            Member member = new Member();
-            member.setUsernam("C");
+            Member member1 = new Member();
+            member1.setUsernam("A");
+            Member member2 = new Member();
+            member2.setUsernam("B");
+            Member member3 = new Member();
+            member3.setUsernam("C");
 
-            em.persist(member);     //이 시점에 INSERT SQL이 날아간다
+//            em.persist(member1);
+//            em.persist(member2);
+//            em.persist(member3);
+
+            System.out.println("member1 = " + member1);
+            System.out.println("member2 = " + member2);
+            System.out.println("member3 = " + member3);
 
 
             tx.commit();
