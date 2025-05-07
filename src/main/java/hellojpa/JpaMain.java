@@ -2,8 +2,10 @@ package hellojpa;
 
 import hellojpa.Member.Member;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 
 public class JpaMain {
     public static void main(String[] args) {
@@ -16,15 +18,10 @@ public class JpaMain {
 
         try {
 
-            // 영속
-            Member member = em.find(Member.class, 150L);
-            member.setName("AAAAA");
+            Member member = new Member();
+            member.setUsernam("C");
 
-
-            em.clear();
-            Member member2 = em.find(Member.class, 150L);
-
-            System.out.println("==========================");
+            em.persist(member);     //이 시점에 INSERT SQL이 날아간다
 
 
             tx.commit();
