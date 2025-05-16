@@ -16,4 +16,35 @@ public class Team {
 
     @OneToMany(mappedBy = "team")
     private Set<Member> members = new HashSet<>();
+
+    public
+
+    public void addMember(Member member) {
+        members.add(member);
+        member.setTeam(this);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<Member> getMembers() {
+        return members;
+    }
+
+    public void setMembers(Set<Member> members) {
+        this.members = members;
+    }
 }
