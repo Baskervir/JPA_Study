@@ -12,12 +12,14 @@ public class Team {
     @Id @GeneratedValue
     private Long id;
 
-    private String name;
+    private String teamName;
 
     @OneToMany(mappedBy = "team")
     private Set<Member> members = new HashSet<>();
 
-    public
+    public Team(String teamName) {
+        this.teamName = teamName;
+    }
 
     public void addMember(Member member) {
         members.add(member);
@@ -32,12 +34,12 @@ public class Team {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 
     public Set<Member> getMembers() {
